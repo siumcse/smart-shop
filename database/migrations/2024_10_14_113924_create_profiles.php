@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('shippingAddress', 500);
             $table->string('user_email', 200)->unique();
 
-            $table->foreign('usre_email')->references('email')->on('users')
+            $table->foreign('user_email')->references('email')->on('users')
                 ->restrictOnDelete()->cascadeOnUpdate();
 
             $table->timestamp('created_at')->useCurrent();
