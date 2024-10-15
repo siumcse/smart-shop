@@ -25,8 +25,10 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('brand_id');
 
-            $table->foreign('category_id')->references('id')->on('categories')->restrictOnDelete()->cascadeOnUpdate();
-            $table->foreign('brand_id')->references('id')->on('brands')->restrictOnDelete()->cascadeOnUpdate();
+            $table->foreign('category_id')->references('id')->on('categories')
+                ->restrictOnDelete()->cascadeOnUpdate();
+            $table->foreign('brand_id')->references('id')->on('brands')
+                ->restrictOnDelete()->cascadeOnUpdate();
             
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
