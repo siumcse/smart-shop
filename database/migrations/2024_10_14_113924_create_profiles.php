@@ -18,9 +18,11 @@ return new class extends Migration
             $table->string('mobile', 15);
             $table->string('city', 50);
             $table->string('shippingAddress', 500);
-            $table->string('user_email', 50)->unique();
+            $table->string('user_email', 200)->unique();
+
             $table->foreign('usre_email')->references('email')->on('users')
                 ->restrictOnDelete()->cascadeOnUpdate();
+
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
